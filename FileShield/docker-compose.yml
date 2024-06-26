@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  cliente:
+    build:
+      context: ./cliente
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./cliente:/app
+    depends_on:
+      - fuentedatos
+    restart: on-failure
+
+  fuentedatos:
+    build:
+      context: ./fuentedatos
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./fuentedatos:/app
+    depends_on:
+      - db
+    restart: on-failure
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: CdsReplicant
+      POSTGRES_DB: BDAnalisis
+    volumes:
+      - ./bd/data:/var/lib/postgresql/data
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - cliente
+      - fuentedatos
+    restart: on-failure

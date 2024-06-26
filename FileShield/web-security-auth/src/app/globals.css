@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply relative font-semibold text-white cursor-pointer text-[17px] w-fit hidden md:block;
+    @apply after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-500 after:w-full;
+    @apply after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center;
+  }
+
+  .nav-link-mobile {
+    @apply relative mb-8 font-semibold text-white cursor-pointer text-[27px] w-fit md:block;
+    @apply after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-500 after:w-full;
+    @apply after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center;
+  }
+
+  .bg-primary {
+    @apply bg-gradient-to-r from-green-800 via-black to-green-800;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-800;
+  }
+}
