@@ -57,7 +57,7 @@ async def get_optional_user(user_id: Optional[int] = Header(None), session: Asyn
     if user:
         logging.info(f"Usuario encontrado: {user.id} - {user.email}")
     else:
-        logging.info("Usuario no encontrado en la base de datos")
+        logging.info("Usuario noss encontrado en la base de datos")
     return user
 
 # Función para calcular los hashes del archivo en memoria
