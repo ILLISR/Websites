@@ -1,0 +1,23 @@
+/FileShield/servidor/__pycache__
+/FileShield/servidor/bin
+/FileShield/servidor/include
+/FileShield/servidor/Lib
+/FileShield/servidor/lib64
+/FileShield/servidor/Scripts
+/FileShield/servidor/lib
+/FileShield/servidor/pyvenv.cfg
+
+# Ignorar archivos y directorios específicos de Python
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar archivos de configuración del entorno
+.env
+.venv
+.envrc
+.venvrc
+
+# Ignorar archivos de configuración de IDEs
+.vscode/
+.idea/
