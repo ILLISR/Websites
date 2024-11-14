@@ -8,6 +8,7 @@
 /FileShield/servidor/lib
 /FileShield/servidor/pyvenv.cfg
 
+.mypy_cache
 # Ignorar archivos y directorios específicos de Python
 *.pyc
 *.pyo
@@ -24,6 +25,7 @@
 # .idea/
 
 # .env y variables
-
 FileShield/servidor/.env
 FileShield/web-security-auth/.env
+**/.env
+
