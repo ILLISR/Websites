@@ -20,5 +20,10 @@
 .venvrc
 
 # Ignorar archivos de configuración de IDEs
-.vscode/
-.idea/
+# .vscode/
+# .idea/
+
+# .env y variables
+
+FileShield/servidor/.env
+FileShield/web-security-auth/.env
